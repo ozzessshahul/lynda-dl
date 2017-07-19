@@ -5,11 +5,11 @@ import httplib2
 from bs4 import BeautifulSoup, SoupStrainer
 
 http = httplib2.Http()
-status, response = http.request('http://www.lynda.com/Unity-tutorials/Unity-5-2D-Building-Tile-Map-Editor/384876-2.html') # url from the site you'd like to scrape
+status, response = http.request('https://www.lynda.com/After-Effects-CS5-tutorials/essential-training/59957-2.html') # url from the site you'd like to scrape
 
 for link in BeautifulSoup(response).find_all('a', href=True):
     #print link['href']
-    if 'http://www.lynda.com/Unity-tutorials/' in link['href']: # parse only the links that contain the key URL to your specific tutorial
+    if 'https://www.lynda.com/After-Effects-CS5-tutorials/essential-training/59957-2.html' in link['href']: # parse only the links that contain the key URL to your specific tutorial
         l = link['href']
         #print l
-        os.system("youtube-dl --username yourLogin --password yourPassword " + l) # login + password lynda to change. nb : the space after your password is usefull
+        os.system("youtube-dl --lib-sip:21172023552708@Dclibrary.org yourLogin --password 3357 " + l) # login + password lynda to change. nb : the space after your password is usefull
